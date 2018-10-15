@@ -1,11 +1,5 @@
 package Leetcode;
 
-import org.omg.CORBA.INTERNAL;
-import org.omg.PortableInterceptor.INACTIVE;
-
-import java.util.ArrayList;
-import java.util.Scanner;
-
 // 翻转整数
 public class LeetCode7 {
 //    my

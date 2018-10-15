@@ -1,5 +1,6 @@
 package Leetcode;
-
+// 盛水最多的容器，可通过反证法证明 https://segmentfault.com/a/1190000016654619
+// 更清晰的证明方法，通过矩阵来理解
 
 public class LeetCode11 {
 
