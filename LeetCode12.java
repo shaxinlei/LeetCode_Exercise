@@ -1,10 +1,10 @@
 package Leetcode;
 
-import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.*;
 
 // 整数转罗马数字
+// 注意本题整数范围在[1,3999]
 public class LeetCode12 {
 
     /*
@@ -13,7 +13,7 @@ public class LeetCode12 {
     * */
     public static String intToRoman(int num) {
         StringBuilder builder = new StringBuilder();
-        Map<Integer, String> map = new HashMap<Integer, String>(){
+        Map<Integer, String> map = new HashMap<>(){
             {
                 put(1, "I");
                 put(5, "V");
@@ -44,40 +44,31 @@ public class LeetCode12 {
             }
             else
             {
-                if (factor >= 1000){    // 底数大于等于1000
-                    factor = 1000;
+                if (res < 4){     // res 为 1，2，3时，只需添加res个I即可
                     while(res>=1) {
                         builder.insert(0,map.get(factor));
                         res--;
                     }
                 }
-                else {          // 底数小于1000
-                    if (res < 4){     // res 为 1，2，3时，只需添加res个I即可
-                        while(res>=1) {
-                            builder.insert(0,map.get(factor));
-                            res--;
-                        }
+                else {
+                    while(res>=6){   // res 为 6,7,8时考虑5+1，6+1，7+1的情况
+                        builder.insert(0,map.get(factor));
+                        res--;
                     }
-                    else {
-                        while(res>=6){   // res 为 6,7,8时考虑5+1，6+1，7+1的情况
-                            builder.insert(0,map.get(factor));
-                            res--;
-                        }
-                        builder.insert(0,map.get(5*factor));
-                    }
+                    builder.insert(0,map.get(5*factor));
                 }
             }
-
         }
         return builder.toString();
     }
 
     /*
     * reference
-    *
+    * 将map中的值降序排列，从前向后解析整数为罗马数字
+    * 时间复杂度为O(logn)还是O(nlogn)
     * */
     public static String intToRoman1(int num) {
-        Map<Integer, String> map = new LinkedHashMap<Integer, String>(){
+        Map<Integer, String> map = new LinkedHashMap<>(){
             {
                 put(1000, "M");
                 put(900, "CM");
@@ -102,16 +93,47 @@ public class LeetCode12 {
             String val = map.get(key);
             if (num/key>0){
                 for (int i = 0; i < num/key; i++) {
-                    sb.append(val);
+                    sb.append(val);    // 向后添加
                 }
+                num = num - key * (num/key);
             }
-            num = num - key * (num/key);
         }
         return sb.toString();
+    }
+
+    /*
+    * 使用两个下标对应的数组代替有序的map
+    * */
+    public static String intToRoman2(int num){
+        String[] letters = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
+        int[] values = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
+        int index = 0;
+        StringBuffer sb = new StringBuffer();
+        while (num > 0){
+            if (num >= values[index]){
+                sb.append(letters[index]);
+                num -= values[index];
+            }else {
+                index++;
+            }
+        }
+        return sb.toString();
+    }
+    /*
+    * reference
+    * 最容易理解的方法，当num限定了范围时，最多到3999，考虑将个十百千所有情况下的罗马数字都表示出来
+    * 时间复杂度O(1) 空间复杂度O(1)
+    * */
+    public static String intToRoman3(int num){
+        String M[] = {"", "M", "MM", "MMM"};
+        String C[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+        String X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+        String I[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+        return M[num/1000] + C[(num%1000)/100] + X[(num%100)/10] + I[(num%10)];
     }
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int num = in.nextInt();
-        System.out.println(LeetCode12.intToRoman1(num));
+        System.out.println(LeetCode12.intToRoman2(num));
     }
 }
