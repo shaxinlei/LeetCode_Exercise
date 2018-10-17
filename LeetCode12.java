@@ -13,7 +13,7 @@ public class LeetCode12 {
     * */
     public static String intToRoman(int num) {
         StringBuilder builder = new StringBuilder();
-        Map<Integer, String> map = new HashMap<>(){
+        Map<Integer, String> map = new HashMap<Integer, String>(){
             {
                 put(1, "I");
                 put(5, "V");
@@ -68,7 +68,7 @@ public class LeetCode12 {
     * 时间复杂度为O(logn)还是O(nlogn)
     * */
     public static String intToRoman1(int num) {
-        Map<Integer, String> map = new LinkedHashMap<>(){
+        Map<Integer, String> map = new LinkedHashMap<Integer, String>(){
             {
                 put(1000, "M");
                 put(900, "CM");
