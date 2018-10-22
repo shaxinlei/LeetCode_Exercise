@@ -1,7 +1,5 @@
 package Leetcode;
 
-import sun.management.snmp.util.SnmpListTableCache;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
