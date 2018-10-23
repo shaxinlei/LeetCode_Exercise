@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class LeetCode22_GenerateParentheses {
+public class LeetCode22 {
     public List<String> generateParenthesis(int n) {
         List<String> res = new ArrayList<>();
         if (n == 0) return res;
@@ -34,7 +34,7 @@ public class LeetCode22_GenerateParentheses {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
 
-        List<String> res = new LeetCode22_GenerateParentheses().generateParenthesis(n);
+        List<String> res = new LeetCode22().generateParenthesis(n);
         for (String s:res
              ) {
             System.out.println("s");

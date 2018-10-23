@@ -5,7 +5,7 @@ import java.util.*;
 /*
 * 有效的括号
 * */
-public class LeetCode20_ValidParentheses {
+public class LeetCode20 {
 
     /*
     * my solution

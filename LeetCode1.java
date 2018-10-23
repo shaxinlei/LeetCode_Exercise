@@ -4,19 +4,7 @@ import java.util.HashMap;
 
 public class LeetCode1 {
 
-//    一次hash表 时间复杂度O(n)  空间复杂度O(n)
-    public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (map.containsKey(target-nums[i])){
-                return new int[]{map.get(target - nums[i]), i};
-            }
-            map.put(nums[i], i);
-        }
-        return null;
-    }
-
-//    两次hash表
+//    两遍hash表
     public int[] twoSum1(int[] nums, int target){
         HashMap<Integer, Integer> map = new HashMap<>();
 
@@ -27,9 +15,22 @@ public class LeetCode1 {
 
 //        检查每个元素对应的目标元素是否存在于HashMap中
         for (int i = 0; i < nums.length; i++) {
-            if (map.containsKey(target - nums[i]))
+            int resTarget = target - nums[i];
+            if (map.containsKey(resTarget)&& map.get(resTarget) != i)
                 return new int[]{i, map.get(target-nums[i])};
         }
         throw new IllegalArgumentException("No two sum solution");
+    }
+
+    //    一遍hash表 时间复杂度O(n)  空间复杂度O(n)
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target-nums[i])){
+                return new int[]{map.get(target - nums[i]), i};
+            }
+            map.put(nums[i], i);
+        }
+        return null;
     }
 }

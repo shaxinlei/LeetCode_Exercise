@@ -1,7 +1,7 @@
 package Leetcode;
 
 // 反转单链表
-public class Leetcode206 {
+public class LeetCode206 {
 //    循环方法
     public static ListNode reverseList(ListNode head) {
         ListNode cur = head;
@@ -36,7 +36,7 @@ public class Leetcode206 {
         n3.next = n4;
         n4.next = n5;
 
-        ListNode reversedList = Leetcode206.reverseList1(head);
+        ListNode reversedList = LeetCode206.reverseList1(head);
         while(reversedList != null) {
             System.out.println(reversedList.val);
             reversedList = reversedList.next;
