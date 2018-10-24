@@ -1,12 +1,33 @@
 package Leetcode;
 
 
+import java.util.Arrays;
 
 public class LeetCode27 {
+
+    /*
+    * my basic idea
+    * 基本想法，利用一个指针j扫描数组，并申请一个结果数组，一旦发现nums[j]!=val，就将nums[j]存入结果数组
+    * 利用了O(n)的额外空间，该方法仅供加深理解
+    * */
+    public static int removeElement2(int[] nums, int val) {
+        if (nums.length==0) return 0;
+
+        int[] res = new int[nums.length];
+        int k = 0;
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != val){
+                res[k++] = nums[j];
+            }
+        }
+        System.out.println(Arrays.toString(res));
+        return k;
+    }
+
     /*
     * reference & my idea
     * 双指针 慢指针i, 快指针j,当 nums[j]==val 时，递增 j 以跳过该元素。只要 nums[j]!=val，复制nums[j]到nums[i]并同时
-    * 递增两个索引。重复这一过程，知道j到达数组末尾，该数组新长度为i。
+    * 递增两个索引。重复这一过程，直到j到达数组末尾，该数组新长度为i。
     * 时间复杂度O(n)，空间复杂度O(1)
     * */
     public static int removeElement(int[] nums, int val) {
@@ -47,7 +68,7 @@ public class LeetCode27 {
 
     public static void main(String[] args) {
         int[] nums = {3,2,2,3};
-        int newSz = LeetCode27.removeElement(nums, 3);
+        int newSz = LeetCode27.removeElement2(nums, 3);
         for (int i = 0; i < newSz; i++) {
             System.out.print(nums[i]+" ");
         }
