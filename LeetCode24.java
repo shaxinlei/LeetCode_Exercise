@@ -27,7 +27,6 @@ public class LeetCode24 {
     /*
     * 考虑只使用Node进行swap
     * */
-
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
         ListNode n2 = new ListNode(2);

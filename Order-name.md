@@ -5,4 +5,7 @@
 * 27 Remove Element
 * 80 Remove Duplicates from Sorted Array II
 * 239 Sliding Window Maximum
-
+* 876 Middle of the Linked List
+* 215 Kth Largest Element in an Array
+* 795 Number of Subarrays with Bounded Maximum
+* 
