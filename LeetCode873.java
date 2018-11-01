@@ -1,7 +1,7 @@
 package Leetcode;
 
 import java.util.HashSet;
-
+// 最长的斐波那契子序列的长度
 public class LeetCode873 {
 
     /*
@@ -28,6 +28,16 @@ public class LeetCode873 {
         return ans >= 3 ? ans:0;
     }
 
+    /**
+     *
+     * Description: DP解法
+     *
+     * @auther: sxl_lab
+     * @date: 2018/10/31 10:56
+     */
+    public static int lenLongestFibSubseq1(int[] A) {
+        return 0;
+    }
     public static void main(String[] args) {
         int[] A = {1,3,7,11,12,14,18};
         System.out.println(lenLongestFibSubseq(A));
