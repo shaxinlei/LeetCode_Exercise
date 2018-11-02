@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 public class LeetCode4 {
     public int lengthOfLongestSubstring(String s) {

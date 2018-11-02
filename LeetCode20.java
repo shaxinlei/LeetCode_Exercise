@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.*;
 
@@ -15,7 +15,9 @@ public class LeetCode20 {
     * 空间复杂度O(n)，当所有的开括号都在左侧时，我们需要将所有的开括号压入栈中
     * */
     public static boolean isValid(String s) {
-        if (s==null || s.length() == 0) return true;
+        if (s==null || s.length() == 0) {
+            return true;
+        }
         Map<Character, Character> map = new HashMap<Character, Character>(){
             {
                 put('(',')');
@@ -28,7 +30,9 @@ public class LeetCode20 {
         for (int i = 0; i < s.length(); i++) {
             if(stack.size() != 0){
                 char top = stack.get(stack.size()-1);
-                if (!map.containsKey(top)) return false;
+                if (!map.containsKey(top)) {
+                    return false;
+                }
                 if (s.charAt(i) == map.get(top)){
                     stack.remove(stack.size()-1);
                     continue;

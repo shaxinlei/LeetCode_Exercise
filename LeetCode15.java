@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.*;
 
@@ -11,28 +11,40 @@ public class LeetCode15 {
     * */
     public List<List<Integer>> threeSum1(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        if( nums.length < 3) return res;
+        if( nums.length < 3) {
+            return res;
+        }
         Arrays.sort(nums);
         for (int i = 0; i < nums.length-2; i++) {
-            if (i > 0 && nums[i] == nums[i-1]) continue;
+            if (i > 0 && nums[i] == nums[i-1]) {
+                continue;
+            }
             int target = -nums[i];
             int j = i+1;  // 左游标
             int k = nums.length-1;  // 右游标
             while(j<k){
                 if (nums[j] + nums[k] < target){
                     j++;
-                    while (j<k && nums[j] == nums[j-1]) j++;
+                    while (j<k && nums[j] == nums[j-1]) {
+                        j++;
+                    }
                 }
                 else if (nums[j] + nums[k] > target){
                     k--;
-                    while (j<k && nums[k] == nums[k+1]) k--;
+                    while (j<k && nums[k] == nums[k+1]) {
+                        k--;
+                    }
                 }
                 else {
                     res.add(Arrays.asList(nums[i], nums[j], nums[k]));
                     j++;
                     k--;
-                    while (j<k && nums[j] == nums[j-1]) j++;
-                    while (j<k && nums[k] == nums[k+1]) k--;
+                    while (j<k && nums[j] == nums[j-1]) {
+                        j++;
+                    }
+                    while (j<k && nums[k] == nums[k+1]) {
+                        k--;
+                    }
                 }
             }
         }
@@ -47,19 +59,29 @@ public class LeetCode15 {
     * */
     public List<List<Integer>> threeSum2(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        if( nums.length < 3) return res;
+        if( nums.length < 3) {
+            return res;
+        }
         Arrays.sort(nums);
         for (int i = 0; i < nums.length-2; i++) {
-            if (i > 0 && nums[i] == nums[i-1]) continue;
-            if (nums[i] >= 0) break;
+            if (i > 0 && nums[i] == nums[i-1]) {
+                continue;
+            }
+            if (nums[i] >= 0) {
+                break;
+            }
             int target = -nums[i];
             int j = i+1;  // 左游标
             int k = nums.length-1;  // 右游标
             while(j<k){
                 if (nums[j] + nums[k] == target){
                     res.add(Arrays.asList(nums[i], nums[j], nums[k]));
-                    while (j<k && nums[j] == nums[j+1]) j++;
-                    while (j<k && nums[k] == nums[k-1]) k--;
+                    while (j<k && nums[j] == nums[j+1]) {
+                        j++;
+                    }
+                    while (j<k && nums[k] == nums[k-1]) {
+                        k--;
+                    }
                     j++;
                     k--;
                 }

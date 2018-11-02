@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 
 import java.util.Arrays;
@@ -11,7 +11,9 @@ public class LeetCode27 {
     * 利用了O(n)的额外空间，该方法仅供加深理解
     * */
     public static int removeElement2(int[] nums, int val) {
-        if (nums.length==0) return 0;
+        if (nums.length==0) {
+            return 0;
+        }
 
         int[] res = new int[nums.length];
         int k = 0;

@@ -1,7 +1,5 @@
-package Leetcode.A_Review;
+package leetcode.A_Review;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +11,9 @@ public class LeetCode1_TwoSum {
     public static int[] twoSum1(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums.length && j!= i; j++) {
-                if (nums[i] + nums[j] == target) return new int[]{i, j};
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
             }
         }
         throw new IllegalArgumentException("No two solution");

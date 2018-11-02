@@ -1,6 +1,5 @@
-package Leetcode;
+package leetcode;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -69,7 +68,9 @@ public class LeetCode860 {
     * 超过100%
     * */
     public static boolean lemonadeChange1(int[] bills) {
-        if (bills[0] > 5) return false;   // 第一个用户付10或20刀时，无法找零，返回false
+        if (bills[0] > 5) {
+            return false;   // 第一个用户付10或20刀时，无法找零，返回false
+        }
 
 //        记录手中5元面值和10元面值的数量
         int num5 = 0;
@@ -116,11 +117,16 @@ public class LeetCode860 {
     public static boolean lemonadeChange2(int[] bills) {
         int five = 0, ten = 0;
         for (int i : bills) {
-            if (i == 5) five++;
-            else if (i == 10) {five--; ten++;}
+            if (i == 5) {
+                five++;
+            } else if (i == 10) {five--; ten++;}
             else if (ten > 0) {ten--; five--;}
-            else five -= 3;
-            if (five < 0) return false;
+            else {
+                five -= 3;
+            }
+            if (five < 0) {
+                return false;
+            }
         }
         return true;
     }

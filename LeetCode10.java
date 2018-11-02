@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.Scanner;
 
@@ -9,12 +9,15 @@ public class LeetCode10 {
      * */
     public boolean isMatch(String s, String p) {
 //        字符模式为空时，只有字符串为空返回true
-        if(p.isEmpty()) return s.isEmpty();
+        if(p.isEmpty()) {
+            return s.isEmpty();
+        }
 
 //        判断第一个字符死否匹配（此时字符模式非空）
         boolean first_match = false;
-        if (s.length() > 0 && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.'))
+        if (s.length() > 0 && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.')) {
             first_match = true;
+        }
 
 //        第二个字符为星号时
 //        判断字符串s与去除*号后的字符模式是否匹配，即*取0次

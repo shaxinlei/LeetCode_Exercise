@@ -1,11 +1,12 @@
-package Leetcode;
+package leetcode;
 // Z字型变换
 public class LeetCode6 {
     public static String convert(String s, int numRows) {
         int len = s.length();
         String res = "";
-        if(len <= numRows || numRows ==1)
+        if(len <= numRows || numRows ==1) {
             return s;
+        }
         int interval = 2*numRows-2,k;
 //        添加首行的字符
         for (k = 0;k<len;k=k+interval){

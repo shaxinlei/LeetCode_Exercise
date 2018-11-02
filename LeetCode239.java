@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.Arrays;
 
@@ -10,7 +10,9 @@ public class LeetCode239 {
     * */
     public static int[] maxSlidingWindow(int[] nums, int k) {
 //        数组长度为0，或者数组长度小于window size
-        if ( nums.length ==0 || nums.length < k ) return new int[]{};
+        if ( nums.length ==0 || nums.length < k ) {
+            return new int[]{};
+        }
 
 //        Slide Window的个数，step为1的情况下适用，不同step需另外计算
         int[] res = new int[nums.length-k+1];
@@ -27,7 +29,9 @@ public class LeetCode239 {
     public static int max(int[] nums, int left, int right){
         int max_val = nums[left];
         for (int i = left+1; i <= right ; i++) {
-            if (nums[i] >  max_val) max_val = nums[i];
+            if (nums[i] >  max_val) {
+                max_val = nums[i];
+            }
         }
         return max_val;
     }

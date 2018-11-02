@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.*;
 
@@ -15,7 +15,9 @@ public class LeetCode187 {
     public static List<String> findRepeatedDnaSequences(String s) {
         List<String> ans = new ArrayList<>();
 
-        if (s.length() < 11) return ans;
+        if (s.length() < 11) {
+            return ans;
+        }
         HashMap<String, Integer> map = new HashMap<>();
 
         for (int i = 0; i <= s.length()-10; i++){

@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 /*
 * 交换数字

@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 // 翻转整数
 public class LeetCode7 {
@@ -28,7 +28,9 @@ public class LeetCode7 {
             val = val*10 + x %10;
             x /= 10;
         }
-        if(val > Integer.MAX_VALUE || val < Integer.MIN_VALUE) return 0;
+        if(val > Integer.MAX_VALUE || val < Integer.MIN_VALUE) {
+            return 0;
+        }
         return (int)val;
     }
 

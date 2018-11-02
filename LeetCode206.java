@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 // 反转单链表
 public class LeetCode206 {
@@ -17,7 +17,9 @@ public class LeetCode206 {
 
 //    递归方法进行链表翻转
     public static ListNode reverseList1(ListNode head) {
-        if (head == null || head.next == null) return head;
+        if (head == null || head.next == null) {
+            return head;
+        }
         ListNode p = reverseList(head.next);    // p节点为翻转后的头节点（原来的tail，最终的head）
         head.next.next = head;
         head.next = null;

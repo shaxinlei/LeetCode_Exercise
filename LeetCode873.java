@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.HashSet;
 // 最长的斐波那契子序列的长度
@@ -12,7 +12,9 @@ public class LeetCode873 {
     public static int lenLongestFibSubseq(int[] A) {
         int ans = 0;
         HashSet<Integer> set = new HashSet<>();
-        for (int i: A) set.add(i);
+        for (int i: A) {
+            set.add(i);
+        }
         for (int i = 0; i < A.length; i++) {
             for (int j = i + 1; j < A.length; j++) {
                 int x = A[j], y = A[i] + A[j];

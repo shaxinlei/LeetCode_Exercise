@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.HashMap;
 
@@ -16,8 +16,9 @@ public class LeetCode1 {
 //        检查每个元素对应的目标元素是否存在于HashMap中
         for (int i = 0; i < nums.length; i++) {
             int resTarget = target - nums[i];
-            if (map.containsKey(resTarget)&& map.get(resTarget) != i)
+            if (map.containsKey(resTarget)&& map.get(resTarget) != i) {
                 return new int[]{i, map.get(target-nums[i])};
+            }
         }
         throw new IllegalArgumentException("No two sum solution");
     }

@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.Scanner;
 
@@ -9,7 +9,9 @@ public class LeetCode44 {
      * */
     public boolean isMatch1(String s, String p) {
 //        p为空串
-        if (p.isEmpty()) return s.isEmpty();
+        if (p.isEmpty()) {
+            return s.isEmpty();
+        }
 
 //        p非空
         if (p.charAt(0) == '*') {
@@ -33,7 +35,9 @@ public class LeetCode44 {
      * */
     public boolean isMatch2(String s, String p) {
 //        p为空串
-        if (p.isEmpty()) return s.isEmpty();
+        if (p.isEmpty()) {
+            return s.isEmpty();
+        }
 
 //        第一个字符为*
         if (p.charAt(0) == '*') {

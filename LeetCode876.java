@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 /*
 * 链表中间节点：返回链表的中间节点，奇数个节点时，反回正中间的，偶数个节点时，返回length/2+1个
 * */
@@ -19,8 +19,11 @@ public class LeetCode876 {
         }
         cur = head;
         int index = -1;
-        if (length%2 == 0) index = length/2 + 1;
-        else index = (int)Math.ceil(length/2.0);
+        if (length%2 == 0) {
+            index = length/2 + 1;
+        } else {
+            index = (int)Math.ceil(length/2.0);
+        }
         while (index > 1){
             cur = cur.next;
             index--;
@@ -55,8 +58,11 @@ public class LeetCode876 {
         while (fast.next != null){
             slow = slow.next;
             fast = fast.next;
-            if (fast.next == null) break;
-            else fast = fast.next;
+            if (fast.next == null) {
+                break;
+            } else {
+                fast = fast.next;
+            }
         }
         return slow;
     }

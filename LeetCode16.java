@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.Arrays;
 
@@ -10,7 +10,9 @@ public class LeetCode16 {
     public static int threeSumClosest(int[] nums, int target) {
         int min_dis = 10000;
         int sum = 0;
-        if (nums.length<3) return 0;
+        if (nums.length<3) {
+            return 0;
+        }
         int[] arr = Arrays.copyOf(nums, nums.length);
         Arrays.sort(arr);
         for (int i = 0; i < arr.length-2; i++) {
@@ -26,8 +28,11 @@ public class LeetCode16 {
                 if (arr[i] + arr[left] + arr[right] == target) {
                     return target;
                 }else{
-                    if (arr[i] + arr[left] + arr[right] <= target) left++;
-                    else right--;
+                    if (arr[i] + arr[left] + arr[right] <= target) {
+                        left++;
+                    } else {
+                        right--;
+                    }
                 }
             }
         }

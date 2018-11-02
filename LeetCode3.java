@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 // Leetcode第4题 两个排序数组的中位数
 
 public class LeetCode3 {

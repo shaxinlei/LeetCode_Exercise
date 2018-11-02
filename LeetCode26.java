@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.Arrays;
 
@@ -11,7 +11,9 @@ public class LeetCode26 {
     * 使用了O(n)的额外空间，此方法仅供加深理解
     * */
     public static int removeDuplicates1(int[] nums){
-        if (nums.length < 2) return nums.length;
+        if (nums.length < 2) {
+            return nums.length;
+        }
 
         int[] res = new int[nums.length];
         res[0] = nums[0];
@@ -33,7 +35,9 @@ public class LeetCode26 {
      * i本质上是代表了不重复元素的位置，但因为存在nums[++i] = nums[j]这一操作，使得nuns[i]的值与j的前元素相同
      * */
     public static int removeDuplicates(int[] nums) {
-        if (nums.length == 0) return 0;
+        if (nums.length == 0) {
+            return 0;
+        }
         int i = 0;
         for (int j = 1; j < nums.length; j++) {
             if (nums[j] != nums[i]){
@@ -48,7 +52,9 @@ public class LeetCode26 {
     * 若nums[i]!=nums[j]，将nums[j]赋给nums[i],j指向下一个元素，此时nums[i]保存的是j的前一个元素
     * */
     public static int removeDuplicates2(int[] nums){
-        if (nums.length < 2) return nums.length;
+        if (nums.length < 2) {
+            return nums.length;
+        }
         int i = 0;
         for (int j = 1; j < nums.length; j++) {
             if (nums[i] != nums[j]){

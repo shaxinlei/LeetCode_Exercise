@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 /*
 * 比较版本号
@@ -65,8 +65,11 @@ public class LeetCode165 {
             int a1 = i < arr1.length?Integer.parseInt(arr1[i]):0;
             int a2 = i < arr2.length?Integer.parseInt(arr2[i]):0;
 
-            if (a1 < a2)return -1;
-            else if(a1 > a2)return 1;
+            if (a1 < a2) {
+                return -1;
+            } else if(a1 > a2) {
+                return 1;
+            }
         }
         return 0;
     }
@@ -95,9 +98,11 @@ public class LeetCode165 {
                 j++;
             }
 
-            if(sum1 > sum2) return 1;
-            else if(sum1 < sum2) return -1;
-            else{
+            if(sum1 > sum2) {
+                return 1;
+            } else if(sum1 < sum2) {
+                return -1;
+            } else{
                 i++;
                 j++;
             }

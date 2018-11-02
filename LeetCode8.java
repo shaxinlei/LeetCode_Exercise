@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 // 字符串转整数（atoi）
 import java.math.BigInteger;
 import java.util.Scanner;
@@ -11,7 +11,9 @@ public class LeetCode8 {
     * 通过正则方法找出匹配的数字序列，并通过BigInteger将其转为int
     * */
     public int myAtoi(String str) {
-        if(str.length()==0) return 0;
+        if(str.length()==0) {
+            return 0;
+        }
         str = str.trim();  //去除空格
 //        捕获组
         String pattern = "^([+-]?\\d+)(.*)";
@@ -22,8 +24,12 @@ public class LeetCode8 {
             String s = m.group(1);
             BigInteger bi = new BigInteger(s);
             int index = str.indexOf(s);
-            if(bi.compareTo(new BigInteger(String.valueOf(Integer.MIN_VALUE)))<0) return Integer.MIN_VALUE;
-            if(bi.compareTo(new BigInteger(String.valueOf(Integer.MAX_VALUE)))>0) return Integer.MAX_VALUE;
+            if(bi.compareTo(new BigInteger(String.valueOf(Integer.MIN_VALUE)))<0) {
+                return Integer.MIN_VALUE;
+            }
+            if(bi.compareTo(new BigInteger(String.valueOf(Integer.MAX_VALUE)))>0) {
+                return Integer.MAX_VALUE;
+            }
             return bi.intValue();
         }else{
             return 0;
@@ -35,15 +41,23 @@ public class LeetCode8 {
     * */
     public int myAtoi_1(String str) {
         str = str.trim();  //去除空格
-        if(str.length()==0) return 0;
+        if(str.length()==0) {
+            return 0;
+        }
 //        字符串不以字符串或数字开头则为无效转换
-        if(str.charAt(0)!='+' && str.charAt(0)!='-' && str.charAt(0)<'0' || str.charAt(0)>'9') return 0;
+        if(str.charAt(0)!='+' && str.charAt(0)!='-' && str.charAt(0)<'0' || str.charAt(0)>'9') {
+            return 0;
+        }
         int val = 0;
         int j = 0;
         if(str.charAt(0) == '-'){
             for(int i=1;i<str.length();i++){
-                if(str.charAt(i)<'0' || str.charAt(i)>'9') break;
-                if(val < Integer.MIN_VALUE/10 || (val == Integer.MIN_VALUE/10 && -1*Character.getNumericValue(str.charAt(i))<-8)) return Integer.MIN_VALUE;
+                if(str.charAt(i)<'0' || str.charAt(i)>'9') {
+                    break;
+                }
+                if(val < Integer.MIN_VALUE/10 || (val == Integer.MIN_VALUE/10 && -1*Character.getNumericValue(str.charAt(i))<-8)) {
+                    return Integer.MIN_VALUE;
+                }
                 val = 10*val + -1*Character.getNumericValue(str.charAt(i));
             }
             return val;
@@ -51,8 +65,12 @@ public class LeetCode8 {
             j = 1;
         }
         for(int i=j;i<str.length();i++){
-            if(str.charAt(i)<'0' || str.charAt(i)>'9') break;
-            if(val > Integer.MAX_VALUE/10 || (val == Integer.MAX_VALUE/10 && Character.getNumericValue(str.charAt(i))>7)) return Integer.MAX_VALUE;
+            if(str.charAt(i)<'0' || str.charAt(i)>'9') {
+                break;
+            }
+            if(val > Integer.MAX_VALUE/10 || (val == Integer.MAX_VALUE/10 && Character.getNumericValue(str.charAt(i))>7)) {
+                return Integer.MAX_VALUE;
+            }
             val = 10*val + Character.getNumericValue(str.charAt(i));
         }
         return val;

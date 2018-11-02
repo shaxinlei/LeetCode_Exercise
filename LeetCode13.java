@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -85,9 +85,15 @@ public class LeetCode13 {
     * */
     public static int romanToInt2(String s) {
         int ans = 0;
-        if (s.contains("IV") || s.contains("IX")) ans -= 2;
-        if (s.contains("XL") || s.contains("XC")) ans -= 20;
-        if (s.contains("CD") || s.contains("CM")) ans -= 200;
+        if (s.contains("IV") || s.contains("IX")) {
+            ans -= 2;
+        }
+        if (s.contains("XL") || s.contains("XC")) {
+            ans -= 20;
+        }
+        if (s.contains("CD") || s.contains("CM")) {
+            ans -= 200;
+        }
 
         int index = 0;
         for (;index<s.length();index++){

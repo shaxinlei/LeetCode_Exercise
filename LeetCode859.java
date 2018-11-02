@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.HashSet;
 
@@ -15,15 +15,17 @@ public class LeetCode859 {
     * 时间复杂度O(n) 空间复杂度O(1)
     * */
     public static boolean buddyStrings(String A, String B) {
-        if (A.length() < 2 || B.length() < 2 || A.length() != B.length()) return false;
+        if (A.length() < 2 || B.length() < 2 || A.length() != B.length()) {
+            return false;
+        }
 
         if (A.equals(B)){
 //            我利用了HashSet来验证唯一性，也可以统计26个英文字母的数量来判断唯一性
             HashSet<Character> set = new HashSet<>();
             for (int i = 0; i < A.length(); i++) {
-                if (set.contains(A.charAt(i)))
+                if (set.contains(A.charAt(i))) {
                     return true;
-                else {
+                } else {
                     set.add(A.charAt(i));
                 }
             }
@@ -33,7 +35,9 @@ public class LeetCode859 {
             int i = 0;
             for (int j = 0; j < A.length(); j++) {
                 if (A.charAt(j) != B.charAt(j)){
-                    if (i >= 2) return false;
+                    if (i >= 2) {
+                        return false;
+                    }
                     arr[i++] = j;
                 }
             }
@@ -42,8 +46,11 @@ public class LeetCode859 {
                 return false;
             }
             else {
-                if (A.charAt(arr[0]) == B.charAt(arr[1]) && A.charAt(arr[1]) == B.charAt(arr[0])) return true;
-                else return false;
+                if (A.charAt(arr[0]) == B.charAt(arr[1]) && A.charAt(arr[1]) == B.charAt(arr[0])) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
         }
     }

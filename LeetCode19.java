@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 // 此题需要考虑如何不适用dummy节点
 public class LeetCode19 {
@@ -9,7 +9,9 @@ public class LeetCode19 {
     * 时间复杂度O(n)，空间复杂度O(1)
     * */
     public static ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head == null) return head;
+        if (head == null) {
+            return head;
+        }
 //        考虑到删除head节点的特情况，增加哑节点，令其指向head节点
         ListNode dummy = new ListNode(0);
         dummy.next = head;

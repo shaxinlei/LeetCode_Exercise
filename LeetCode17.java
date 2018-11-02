@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.*;
 
@@ -13,7 +13,9 @@ public class LeetCode17 {
     * */
     public  List<String> letterCombinations(String digits) {
         List<String> ans = new ArrayList<>();
-        if (digits == null || digits.length() == 0) return ans;
+        if (digits == null || digits.length() == 0) {
+            return ans;
+        }
         Map<Character,String> map = new HashMap<Character, String>(){
             {
                 put('2', "abc");

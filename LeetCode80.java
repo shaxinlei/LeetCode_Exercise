@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.Arrays;
 
@@ -12,7 +12,9 @@ public class LeetCode80 {
     * 当num[i]!=num[j]，将num[j]存入res，然后将j赋给i，并将计数器置1，继续循环
     * */
     public static int removeDuplicates1(int[] nums) {
-        if (nums.length < 2) return nums.length;
+        if (nums.length < 2) {
+            return nums.length;
+        }
 
         int[] res = new int[nums.length];
         res[0] = nums[0];
@@ -41,7 +43,9 @@ public class LeetCode80 {
     * 时间复杂度O(n)
     * */
     public static int removeDuplicates2(int[] nums) {
-        if (nums.length < 2) return nums.length;
+        if (nums.length < 2) {
+            return nums.length;
+        }
         int i = 0, count =1;
         for (int j = 1; j < nums.length; j++) {
             if (nums[i] == nums[j]){
@@ -61,12 +65,15 @@ public class LeetCode80 {
     * 此方法还需理解
     * */
     public static int removeDuplicates(int[] nums) {
-        if (nums.length<2) return nums.length;
+        if (nums.length<2) {
+            return nums.length;
+        }
 
         int index = 2;
         for (int i = 2; i < nums.length; i++){
-            if (nums[i] != nums[index - 2])
+            if (nums[i] != nums[index - 2]) {
                 nums[index++] = nums[i];
+            }
         }
         return index;
     }

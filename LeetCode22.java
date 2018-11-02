@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,9 @@ import java.util.Scanner;
 public class LeetCode22 {
     public List<String> generateParenthesis(int n) {
         List<String> res = new ArrayList<>();
-        if (n == 0) return res;
+        if (n == 0) {
+            return res;
+        }
 
         char[] chars = {'(', ')'};
         StringBuilder sb = new StringBuilder();

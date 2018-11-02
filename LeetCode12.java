@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 
 import java.util.*;
@@ -37,7 +37,9 @@ public class LeetCode12 {
             num /= 10;
             int factor = (int)Math.pow(10, exp);
             exp++;
-            if (res == 0) continue;   // 此位为0不用单独将此位转化位罗马数字
+            if (res == 0) {
+                continue;   // 此位为0不用单独将此位转化位罗马数字
+            }
             int temp = res * factor;
             if (map.containsKey(temp)) {
                 builder.insert(0,map.get(temp));

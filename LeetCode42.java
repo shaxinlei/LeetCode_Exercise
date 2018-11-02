@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 public class LeetCode42 {
 
@@ -18,8 +18,12 @@ public class LeetCode42 {
 
             while(true){
 //                将特殊情况放在开头，排除掉进行减枝
-                if ((l==0 && l_max <= r_max) || (r == height.length -1 && r_max< l_max)) break;
-                if (l==0 && r==height.length-1) break;
+                if ((l==0 && l_max <= r_max) || (r == height.length -1 && r_max< l_max)) {
+                    break;
+                }
+                if (l==0 && r==height.length-1) {
+                    break;
+                }
                 if (l-1>=0){
                     if (height[--l] > l_max ) {
                         l_max = height[l];
@@ -44,7 +48,9 @@ public class LeetCode42 {
     * 利用DP计算每个位置左右两侧的最大高度，以空间换时间
     * */
     public static int trap2(int[] height) {
-        if (height == null || height.length == 0) return 0;
+        if (height == null || height.length == 0) {
+            return 0;
+        }
         int ans = 0;
         int size = height.length;
         int[] l_max_arr = new int[size];

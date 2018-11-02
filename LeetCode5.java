@@ -1,4 +1,4 @@
-package Leetcode;
+package leetcode;
 
 import java.util.Scanner;
 
@@ -24,18 +24,20 @@ public class LeetCode5 {
                 }
             }
         }
-        if(startIndex+maxLen > s.length())
+        if(startIndex+maxLen > s.length()) {
             return s.substring(startIndex);
-        else
+        } else {
             return s.substring(startIndex, startIndex+maxLen);
+        }
     }
 //  暴力搜索的基础上进行了剪枝，AC
     public  static String longestPalindrome1(String s) {
         int maxLen = 1;
         int startIndex = 0;
         for(int len = s.length();len>=1;len--){
-            if(len <= maxLen)
+            if(len <= maxLen) {
                 break;
+            }
             for (int i = 0; i <= s.length()-len; i++) {
                 int lIndex = i;
                 int rIndex = i+len-1;
@@ -46,17 +48,19 @@ public class LeetCode5 {
                 if(lIndex>=rIndex){
                     maxLen = len;
                     startIndex = i;
-                    if(startIndex+maxLen > s.length())
+                    if(startIndex+maxLen > s.length()) {
                         System.out.println("字串："+s.substring(startIndex));
-                    else
+                    } else {
                         System.out.println("字串："+s.substring(startIndex, startIndex+maxLen));
+                    }
                 }
             }
         }
-        if(startIndex+maxLen > s.length())
+        if(startIndex+maxLen > s.length()) {
             return s.substring(startIndex);
-        else
+        } else {
             return s.substring(startIndex, startIndex+maxLen);
+        }
     }
 
     public static void main(String[] args) {
