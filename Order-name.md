@@ -19,3 +19,7 @@
 * 637 Average of Levels in Binary Tree 二叉树层的平均值
 * 111 Minimum Depth of Binary Tree 二叉树的最小深度
 * 821 Shortest Distance to a Character 字符最短距离
+* 21 Merge Two Sorted Lists 合并两个有序链表
+* 83 Remove Duplicates from Sorted List 删除排序链表中的重复元素
+* 203 Remove Linked List Elements 移除链表元素
+* 141 Linked List Cycle 环形链表
