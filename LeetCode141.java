@@ -5,7 +5,7 @@ import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
- * Description:
+ * Description: 线性表找环
  *
  * @author : sxl_lab
  * @date : 2018-11-17
@@ -13,7 +13,7 @@ import java.util.Set;
  */
 public class LeetCode141 {
     /**
-     * my solution(未AC 超时，原因未知)
+     * my solution(未AC 超时，题意理解：是链中出现环，而不是判断是否为环形链表)
      * Description:
      *
      * @auther: sxl_lab
@@ -35,7 +35,7 @@ public class LeetCode141 {
     }
 
     /**
-     * reference(AC)
+     * reference(AC) 推荐
      * Description: 利用了Hash表，遍历所有结点并在哈希表中存储每个结点的引用，如果当前结点为null，表示到了tail结点则无环，
      * 若是当前结点的引用已经存在于哈希表中，则表示有环。
      * 时间复杂度O(n) 空间复杂度O(n) n为链表中元素个数
