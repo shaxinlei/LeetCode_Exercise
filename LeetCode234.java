@@ -61,6 +61,7 @@ public class LeetCode234 {
      *
      * Description: 也是双指针思想，但这里没有先遍历链表来确定链表中间结点，而是通过快慢指针来找到中间节点
      *
+     * 时间复杂度O(n) 空间复杂度O(1)
      * @auther: sxl_lab
      * @date: 2018/11/19 17:49
      */
