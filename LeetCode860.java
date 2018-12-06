@@ -30,15 +30,15 @@ public class LeetCode860 {
                 }
                 case 20:{
                     if (wallet.contains(5)){
-                        wallet.remove(new Integer(5));
+                        wallet.remove(5);
                         if (wallet.contains(10)){
-                            wallet.remove(new Integer(10));
+                            wallet.remove(10);
                             wallet.add(20);
                         }else {
                             if (wallet.contains(5)){
-                                wallet.remove(new Integer(5));
+                                wallet.remove(5);
                                 if (wallet.contains(5)){
-                                    wallet.remove(new Integer(5));
+                                    wallet.remove(5);
                                     wallet.add(20);
                                 }
                                 else {
